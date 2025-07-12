@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='productstyle.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        <input name="busca" placeholder="Search products">
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% if result %}
+            {% for item in result %}
+                <li>{{ item }} <a href="{{ url_for('update_products') }}?nome={{ item }}" name="{{ item }}">Editar</a></li>
+            {% endfor %}
+        {% else %}
+            <li>Nothing here</li>
+        {% endif %}
+    </ul>
+    <a href="{{ url_for('set_products')}}">Cadastrar</a>
+</body>
+</html>

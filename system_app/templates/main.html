@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mainstyle.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <section id="menu">
+    <a class="menuitem" href="{{ url_for('products')}}">Produtos</a>
+    <a class="menuitem" href="{{ url_for('history')}}">Historico</a>
+    </section>
+    <section>
+        
+        <h1>Buscar Produtos</h1>
+        <div>
+  <h3>Total da compra: R$ <span id="total-compra">0.00</span></h3>
+  <button id="complete-purchase" onclick="attribution()">finalizar compra</button>
+</div>
+        <input type="text" id="search" onkeyup="buscar()" placeholder="Digite o nome do produto...">
+        <ul id="results"></ul>
+        <div id="shopping-list"></div>
+    </section>
+    
+    <script  src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fffaf7;
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    color: #333;
+}
+
+/* Título */
+h2 {
+    color: #89666D;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fdfaf5; /* fundo claro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #E3A868;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #fff0eb; /* leve destaque ao passar o mouse */
+}
+
+/* Total da compra */
+h3 {
+    margin-top: 30px;
+    text-align: right;
+    color: #f2306D;
+    font-size: 1.3em;
+}

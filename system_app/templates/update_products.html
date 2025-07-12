@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='updateproductstyle.css') }}">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+   
+    <form id="form" method="POST">
+         <h3>{{ nome }}</h3>
+        <input type="hidden" name="name" value="{{ nome }}">
+        <input type="text" name="ncm" placeholder="NCM" value="{{ db['ncm']}}" required>
+        <input type="number" name="cost" placeholder="Cost" value="{{ db['cost']}}">
+        <input name="sale" placeholder="Sale" value="{{ db['sale']}}" required>
+        <input type="text" name="cst" placeholder="CST" value="{{ db['cst']}}">
+        <input type="text" name="cfop" placeholder="CFOP" value=" {{ db['cfop']}} ">
+        <input name="tax_rate" placeholder="Aliquota" value="{{ db['tax_rate']}}%">
+        <input name="quantity" placeholder="Quantity" value="{{ db['quantity']}}">
+        <button type="submit">Enviar</button>
+    </form>
+    </form>
+</body>
+</html>

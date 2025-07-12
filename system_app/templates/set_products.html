@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='updateproductstyle.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="ncm" placeholder="NCM" required>
+        <input type="number" name="cost" placeholder="Cost">
+        <input name="sale" placeholder="Sale" required>
+        <input type="text" name="cst" placeholder="CST">
+        <input type="text" name="cfop" placeholder="CFOP">
+        <input name="tax_rate" placeholder="Aliquota">
+        <input name="quantity" placeholder="Quantity">
+        <input name="pis" placeholder="PIS">
+        <input name="cofins" placeholder="COFINS">
+        
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

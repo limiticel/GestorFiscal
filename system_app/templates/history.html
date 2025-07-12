@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='historystyle.css') }}">
+  <title>Trimestres</title>
+  
+</head>
+<body>
+
+<header class="resumo-header">
+  {% if user_regim == "LUCRO REAL" or user_regim == "PRESUMIDO" %}
+    <div class="resumo-card">
+      <h4>IRPJ</h4>
+      <p>{{ irpj }}</p>
+    </div>
+  {% endif %}
+  {% if user_regim == "LUCRO REAL" or user_regim == "PRESUMIDO" %}
+    <div class="resumo-card">
+      <h4>CSLL</h4>
+      <p>{{ csll }}</p>
+    </div>
+  {% endif %}
+  <div class="resumo-card">
+      <h4>DAS</h4>
+      <p>
+        {% if user_regim == "SIMPLES NACIONAL" %}
+          {{ das }}
+        {% endif %}
+      </p>
+    </div>
+  <div class="resumo-card">
+    <h4>Faturamento Bruto</h4>
+    <p>{{ total }}</p>
+  </div>
+</header>
+
+<!-- Menu suspenso para trimestres -->
+<form method="get" action="/history">
+  <label for="trimestre">Escolha o trimestre:</label>
+  <select name="trimestre" id="trimestre" onchange="this.form.submit()">
+    <option value="">Todos</option>
+    <option value="1" {% if trimestre_selecionado == '1' %}selected{% endif %}>1º Trimestre</option>
+    <option value="2" {% if trimestre_selecionado == '2' %}selected{% endif %}>2º Trimestre</option>
+    <option value="3" {% if trimestre_selecionado == '3' %}selected{% endif %}>3º Trimestre</option>
+    <option value="4" {% if trimestre_selecionado == '4' %}selected{% endif %}>4º Trimestre</option>
+  </select>
+</form>
+
+<ul>
+  {% for item in datadict %}
+    <li class = "box-trim">
+      {{ item["data"] }} : {{ item["name"] }} - {{ item["quantity"] }} - {{ format_brl(item["total"]) }}
+    </li>
+  {% endfor %}
+</ul>
+{% if user_regim != "SIMPLES NACIONAL" %}
+  <h3>Relatório Mensal de PIS e COFINS</h3>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <th>Mês</th>
+      <th>PIS (R$)</th>
+      <th>COFINS (R$)</th>
+    </tr>
+    {% for mes in pis_mensal.keys()|sort %}
+    <tr>
+      <td>{{ mes }}</td>
+      <td>{{ format_brl(pis_mensal[mes]) }}</td>
+      <td>{{ format_brl(cofins_mensal[mes]) }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+</body>
+</html>

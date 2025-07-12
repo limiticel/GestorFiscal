@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Chat com socketio</h2>
+    <input id="msg" placeholder="digite algo">
+    <button onclick="enviar()">Enviar</button>
+
+    <ul id="chat"></ul>
+    <script>
+        const socket = io();
+
+        socket.on("connect", () => {
+            console.log("conectado ao servidor")
+        });
+
+        socket.on("mensagem_servidor", (msg) => {
+            console.log(msg)
+            const li = document.createElement("li");
+            li.textContent = msg;
+            document.getElementById("chat").appendChild(li)
+        })
+
+        function enviar(){
+            const input = document.getElementById("msg")
+            const texto = input.value;
+            console.log(texto)
+            socket.emit("mensagem_cliente", texto) //aqui chama a função do python
+            input.value = ""
+        }
+
+    </script>
+</body>
+</html>

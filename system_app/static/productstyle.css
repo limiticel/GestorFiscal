@@ -1,0 +1,95 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaf7;
+    color: #333;
+    padding: 40px;
+}
+
+/* Formulário de busca */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+input[name="busca"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    width: 250px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #F76F6D;
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #f2306D;
+}
+
+/* Lista de resultados */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background-color: #fdf9f3;
+    border: 1px solid #E3A868;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Link de editar */
+a[href*="update_products"] {
+    background-color: #D2C29F;
+    color: #333;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+a[href*="update_products"]:hover {
+    background-color: #E3A868;
+    color: white;
+}
+
+/* Link de cadastro */
+a[href*="set_products"] {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    background-color: #89666D;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+a[href*="set_products"]:hover {
+    background-color: #F76F6D;
+}

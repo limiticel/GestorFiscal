@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='loginstyle.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="form" method="POST">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for msg in messages %}
+                        <li style="color: red">{{ msg }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <input name="credential" placeholder="Credential">
+        <input name="password" placeholder="Password">
+        <button type="submit">Login in</button>
+        <a href="{{ url_for('register')}}">Não tem um cadastro? cadastre-se!</a>
+    </form>
+</body>
+</html>

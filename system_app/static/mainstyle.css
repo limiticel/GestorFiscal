@@ -1,0 +1,134 @@
+:root {
+    --cor1: #89666D;  /* roxo suave */
+    --cor2: #D2C29F;  /* areia clara */
+    --cor3: #E3A868;  /* dourado suave */
+    --cor4: #F76F6D;  /* rosa coral */
+    --cor5: #f2306D;  /* rosa forte */
+    --fonte: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte);
+    background-color: var(--cor2);
+    color: #333;
+}
+
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1, h3 {
+    color: var(--cor1);
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 2px solid var(--cor1);
+    border-radius: 6px;
+    outline-color: var(--cor3);
+    box-sizing: border-box;
+}
+
+ul#results {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+ul#results li {
+    background-color: var(--cor3);
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul#results li input[type="number"] {
+    width: 60px;
+    margin: 0 10px;
+}
+
+ul#results li button {
+    background-color: var(--cor4);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+ul#results li button:hover {
+    background-color: var(--cor5);
+}
+
+#shopping-list {
+    margin-top: 30px;
+}
+
+.itens {
+    background-color: var(--cor1);
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-btn {
+    background-color: var(--cor5);
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.remove-btn:hover {
+    background-color: #c10040;
+}
+
+#complete-purchase {
+    background-color: var(--cor4);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#complete-purchase:hover {
+    background-color: var(--cor5);
+}
+
+a.menuitem {
+    display: inline-block;
+    background-color: var(--cor1);
+    color: white;
+    padding: 8px 16px;
+    margin: 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+a.menuitem:hover {
+    background-color: var(--cor4);
+}

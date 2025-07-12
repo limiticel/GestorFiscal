@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='registerstyle.css') }}">
+    <title>Register</title>
+</head>
+<body>
+    <form id="form" method="POST">
+        <input name="credential" placeholder="CNPJ or CPF">
+        <input type="password" name="password" placeholder="Password">
+        <input type="text" name="tax_regim" placeholder="Tax Regim">
+        <button type="submit">Sign in</button>
+        <a href="{{ url_for('login')}}"> Já tem cadastro? entre!</a>
+    </form>
+</body>
+</html>
